@@ -1,0 +1,40 @@
+/* https://transfonter.org/ */
+@font-face {
+  font-display: swap;
+  font-family: 'Sonoma';
+  font-style: normal;
+  font-weight: normal;
+  src: local('BRSonoma-Regular'), url('/assets/fonts/BRSonoma-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Sonoma-light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('BRSonoma-Light'), url('/assets/fonts/BRSonoma-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Sonoma-Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('BRSonoma-Medium'), url('/assets/fonts/BRSonoma-Medium.otf') format('opentype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Sonoma-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('BRSonoma-Bold'), url('/assets/fonts/BRSonoma-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://fonts.googleapis.com/css2?family=Lato&display=swap') format('woff2');
+}
+

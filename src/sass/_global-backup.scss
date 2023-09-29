@@ -1,0 +1,27 @@
+@import './variables';
+
+html,
+body,
+main {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+  outline: none;
+}
+
+p {
+  margin: 0;
+}

@@ -1,0 +1,15 @@
+/* Gradients */
+
+:root {
+  --text-light-accent: linear-gradient(90deg, #b400ff 0%, #3817ff 100%);
+  --gradient-aqua-lemon: linear-gradient(86.01deg, #00f4e2 0%, #00ff7f 100%);
+  --gradient-logo: linear-gradient(220.63deg, var(--gradient-1) 14.69%, var(--gradient-2) 84.77%);
+  --gradient-amount: linear-gradient(267.48deg, #00d154 2.11%, #00a2ff 47.51%, #006fff 97.89%);
+  --gradient-text-dark-secondary: linear-gradient(87.48deg, #00cfff 2.11%, #00ff7f 97.89%);
+  --gradient-text: linear-gradient(
+    72.79deg,
+    var(--gradient-3) 16.34%,
+    var(--gradient-4) 51.26%,
+    var(--gradient-5) 84.56%
+  );
+}
