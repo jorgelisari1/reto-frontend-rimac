@@ -29,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-dm-serif);
+  font-family: var(--font-br-sonoma);
   font-weight: normal;
 }
 
@@ -91,14 +91,14 @@ h5 {
 .field-error {
   color: var(--critical);
   display: block;
-  font-family: var(--font-dm-sans-regular);
+  font-family: var(--font-br-sonoma);
   font-size: 12px;
   line-height: 20px;
   margin: 8px 4px 0;
 }
 
 button {
-  font-family: var(--font-dm-sans-bold);
+  font-family: var(--font-br-sonoma-bold);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
