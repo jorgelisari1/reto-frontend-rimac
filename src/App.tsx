@@ -1,25 +1,33 @@
 import React from 'react';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Header from './components/header';
+import ErrorPage from './pages/Error';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import './sass/_global.scss';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element:  < Login/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "home",
+    element: <Home />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      
-        <p>
-        ¡Compra por este medio! 
-        </p>
-        <p>
-        (01) 411 6001 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container grid'>
+      <Header/>
+      <RouterProvider router={router} />
+
     </div>
   );
 }

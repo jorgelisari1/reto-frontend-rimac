@@ -1,0 +1,18 @@
+@import '../../sass/media';
+ 
+.tag{
+    background: var(--gradient-aqua-lemon);
+    border-radius: var(--border-radius-tag);
+    padding: 4px 16px;
+    width: max-content;
+    height: max-content;
+}
+
+.text{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    @include tablet {
+        font-size: 12px;
+      }
+}

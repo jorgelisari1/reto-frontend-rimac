@@ -1,12 +1,12 @@
 @import './border';
 @import './color';
-@import './grid';
 @import './shadow';
-@import './typography';
-@import './z-index';
 @import './variables';
-@import './globals';
 @import './fonts';
+@import './media';
+@import './global-backup';
+@import './gradients';
+
 html {
   -webkit-font-smoothing: antialiased;
 }
@@ -133,17 +133,41 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 
-@media only screen and (max-width: 1280px) {
+.container {
   
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1552px;
+    padding-left: 120px;
+    padding-right: 120px;
+    width: 100%;
+
+    @include desktop {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    @include mobile {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+
+
+.grid {
+  box-sizing: border-box;
+      column-gap: 32px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+  
+      @include tablet {
+        column-gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+      }
 }
 
-@media only screen and (max-width: 1024px) {
-  
-}
-
-@media only screen and (max-width: 640px) {
- 
-}
 
 
 
