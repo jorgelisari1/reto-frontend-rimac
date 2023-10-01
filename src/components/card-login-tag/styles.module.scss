@@ -1,0 +1,15 @@
+@import '../../sass/media';
+
+.container{
+    width: 352px;
+    margin-bottom: 10px;
+    h3{
+        text-align: left;
+        font-size: 32px;
+        font-family: var(--font-br-sonoma-bold);
+    }
+    @include tablet{
+        width: 204px;
+        font-size: 28px;
+    }
+}

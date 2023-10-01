@@ -1,0 +1,58 @@
+@import '../../sass/media';
+
+.all{
+    grid-column: 1/13;
+    @include tablet {
+        grid-column: 1/5;
+      
+    }
+}
+.container{
+   width: 100%;
+   display: flex;
+  
+}
+.content{
+   margin-left: 80px;
+    @include mobile {
+        margin-left: 0px;
+       
+    }
+
+}
+
+
+.divForm{
+    width: 100%;
+
+}
+
+.btn{
+    width: 50%;
+    margin: 20px 0 20px 0;
+    @include tablet {
+        width: 100%;
+      }
+
+}
+
+.conditionalImage{
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--grey-30);
+        margin-bottom: 15px;
+    }
+
+    .smallImage{
+        border-radius: 10%  ;
+    }
+}
+
+.bigImage{
+    height: 560px;
+    width: 480px;
+}
+

@@ -1,0 +1,88 @@
+.button {
+  align-items: center;
+  background-color: var(--grey-100);
+  border: 0px;
+  border-radius: var(--border-radius-button);
+  box-sizing: border-box;
+  color: var(--n-0);
+  display: flex;
+  font-family: var(--font-br-sonoma-bold);
+  font-weight: 700;
+  gap: 8px;
+  justify-content: center;
+  margin: 0;
+  transition: color 0.3s, background-color 0.3s;
+  user-select: none;
+  font-size: 20px;
+
+  @extend %button-sizes;
+  @extend %button-states;
+
+  &:not(.--loading) {
+    cursor: pointer;
+
+    &:disabled {
+      cursor: initial;
+
+      --border-color: transparent;
+      --text-color: var(--grey-40);
+      --button-color: var(--blue-opacity);
+    }
+  }
+}
+
+
+%button-states {
+  &.--expand {
+    width: 100%;
+  }
+
+  &:not(.--disabled-hover):not([disabled]):hover {
+    --button-color: transparent;
+    --text-color: var(--grey-100);
+  }
+
+
+
+
+
+  &.--red.--outline {
+    --button-color: transparent;
+    --text-color: var(--grey-0);
+    --border-color: var(--green-300);
+
+    &:not(.--disabled-hover):not([disabled]):hover {
+      --button-color: var(--green-300);
+      --text-color: var(--grey-100);
+    }
+  }
+}
+
+%button-sizes {
+  $border: calc(var(--border-width-form) * 2);
+
+  &.--x2-large {
+    min-height: 64px;
+    padding: substract(20px, $border) substract(40px, $border);
+  }
+
+  &.--x1-large {
+    min-height: 68px;
+    padding: substract(18px, $border) substract(40px, $border);
+  }
+
+  &.--large {
+    min-height: 62px;
+    padding: substract(14px, $border) substract(32px, $border);
+  }
+
+  &.--medium {
+    min-height: 56px;
+    padding: substract(12px, $border) substract(24px, $border);
+  }
+
+  &.--small {
+    min-height: 42px;
+    padding: substract(8px, $border) substract(16px, $border);
+  }
+}

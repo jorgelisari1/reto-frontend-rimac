@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 import Header from './components/header';
 import ErrorPage from './pages/Error';
-import Login from './pages/Login';
-import Home from './pages/Home';
+import Login from './pages/login';
+import Home from './pages/home';
 import './sass/_global.scss';
 
 
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
   return (
     <div className='container grid'>
       <Header/>
       <RouterProvider router={router} />
-
     </div>
   );
 }
