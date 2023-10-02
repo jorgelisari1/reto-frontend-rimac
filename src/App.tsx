@@ -7,6 +7,7 @@ import Header from './components/header';
 import ErrorPage from './pages/Error';
 import Login from './pages/login';
 import Home from './pages/home';
+import Resume from './pages/resume';
 import './sass/_global.scss';
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "home",
     element: <Home />,
+  },
+  {
+    path: "resume",
+    element: <Resume />,
   },
 ]);
 

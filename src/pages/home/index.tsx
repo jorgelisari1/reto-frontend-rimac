@@ -29,9 +29,7 @@ const Home: React.FC = () => {
             !isTablet && (<div className={styles.center}>
                 <ButtonBack text={'Volver'} />
             </div>)
-
         }
-
         <div className={styles.contentTitle}>
             <h2 className={styles.title}>{name} ¿Para quién deseas cotizar?</h2>
             <span className={styles.subtitle}>Selecciona la opción que se ajuste más a tus necesidades.</span>
