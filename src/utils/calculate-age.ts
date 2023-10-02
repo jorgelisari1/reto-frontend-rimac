@@ -1,9 +1,9 @@
-export const calculateAgeFromString = (birthDateString: string): number | null => {
+export const calculateAgeFromString = (birthDateString: string): number => {
     const parts = birthDateString.split("-").map(Number);
   
     if (parts.length !== 3 || parts.some(isNaN)) {
       console.error("Formato de fecha incorrecto. Debe ser 'dd-mm-yyyy'.");
-      return null;
+      return -1;
     }
   
     const [day, month, year] = parts;
@@ -12,7 +12,7 @@ export const calculateAgeFromString = (birthDateString: string): number | null =
   
     if (isNaN(birthDate.getTime())) {
       console.error("Fecha de nacimiento no válida.");
-      return null;
+      return -1;
     }
   
     let age = today.getFullYear() - birthDate.getFullYear();

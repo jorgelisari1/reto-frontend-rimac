@@ -1,5 +1,9 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { fetchApiPlans } from '../../services/api';
+import { ApiPlansResponse } from '../../typins/data';
+import { minusFivePercent } from '../../utils/minus-five-percent';
+import {calculateAgeFromString} from '../../utils/calculate-age'
 import Step from '../../components/step';
 import ButtonBack from '../../components/buttonBack';
 import SimpleCardHome from '../../components/simple-card-home';
@@ -25,17 +29,28 @@ const description = [
 const Home: React.FC = () => {
     const [check, setCheck] = useState(false);
     const [checkTwo, setCheckTwo] = useState(false);
+    const [apiData, setApiData] = useState<ApiPlansResponse | null>(null);
     const { isTablet } = useResponsive();
     const location = useLocation();
     const receivedData = location.state?.data || null;
+    const userAge = calculateAgeFromString(receivedData.birthDay);
+    useEffect(() => {
+        // Verifica si los datos del usuario están disponibles
+        if (receivedData) {
 
-    console.log('useLocation', receivedData)
+            fetchApiPlans()
+                .then(response => {
+                    // Actualiza el estado con la respuesta de la API
+                    setApiData(response);
+                })
+                .catch(error => {
+                    console.error('Error al llamar a la API:', error);
+                });
+        }
+    }, [receivedData]);
 
     return <section className={styles.home} >
-        <div className={styles.hola}>
         <Step />
-        </div>
-       
         {
             !isTablet && (<div className={styles.center}>
                 <ButtonBack text={'Volver'} />
@@ -67,18 +82,24 @@ const Home: React.FC = () => {
             />
         </section>
         {
-            (check || checkTwo)&&(<section>
-            <CardHome
-                title={nameC}
-                price={price}
-                description={description}
-                icon={IconForMe}
-            />
-        </section>)
-
+            (check || checkTwo) && (<section className={styles.contentCarHome}>{
+                apiData!.list.map((item) => {
+                    if(userAge >= item.age){
+                        return (
+                            <CardHome
+                                key={item.name}
+                                title={item.name}
+                                price={check ? item.price : minusFivePercent(item.price)}
+                                description={description}
+                                icon={IconForMe}
+                            />
+                        )
+                    }
+                    
+                })
+            }
+            </section>)
         }
-       
-
 
     </section>
 

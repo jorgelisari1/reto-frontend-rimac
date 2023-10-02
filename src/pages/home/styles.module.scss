@@ -6,9 +6,16 @@ height: 100vh;
 font-family: var(--font-lato);
 color: var(--n-700);
 padding-bottom: 50px;
+
 @include tablet {
     grid-column: 1/5;
 }
+.contentCarHome{
+    display: flex;
+    justify-content: space-around;
+
+}
+
     .center{
         padding: 0 64px;
     }
@@ -55,4 +62,6 @@ padding-bottom: 50px;
         align-items: center;
     }
     }
+
+  
 }

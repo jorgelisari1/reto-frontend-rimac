@@ -26,7 +26,7 @@ const IconList: React.FC<PropsIcon> = ({ elem }) => {
         case 2:
             return <GlHospitalSolid />;
         default:
-            // En caso de un índice no manejado, puedes devolver un componente predeterminado o null
+            // En caso de un índice no manejado, se devuelve null
             console.warn(`Ícono no encontrado`);
             return null;
     }
@@ -43,22 +43,22 @@ const CardHome: React.FC<Props> = ({ title, price, icon, description }) => {
         <span className="plan">COSTO DEL PLAN</span>
         <span className="price">${price} al mes</span>
 
-<div className='list'>
-{
-            description.map((elem, index) => (
-                <div className='item-list' key={elem} >
-                    {
-                        isTablet ? <div className="content-icon">{
-                            <IconList elem={index} />
-                        }</div> : <div className='content-point'><div className="punto" /></div>
-                    }
-                    <span className="desc" >{elem} </span>
-                </div>
+        <div className='list'>
+            {
+                description.map((elem, index) => (
+                    <div className='item-list' key={elem} >
+                        {
+                            isTablet ? <div className="content-icon">{
+                                <IconList elem={index} />
+                            }</div> : <div className='content-point'><div className="punto" /></div>
+                        }
+                        <span className="desc" >{elem} </span>
+                    </div>
 
-            ))
-        }
-</div>
-        
+                ))
+            }
+        </div>
+
         <Button text="Seleccionar Plan" theme='red' expand />
     </div>
 
