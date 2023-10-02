@@ -1,11 +1,16 @@
 @import '../../sass/media';
  
 .tag{
+    display: flex;
     background: var(--gradient-aqua-lemon);
     border-radius: var(--border-radius-tag);
     padding: 4px 16px;
     width: max-content;
-    height: max-content;
+    height: 24px;
+    margin-bottom:10px ;
+    @include tablet{
+        height: 20px;
+    }
 }
 
 .text{
@@ -14,5 +19,6 @@
     line-height: 16px;
     @include tablet {
         font-size: 12px;
+        line-height: 14px;
       }
 }

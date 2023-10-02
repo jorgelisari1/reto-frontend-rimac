@@ -1,0 +1,95 @@
+@import '../../sass/media';
+
+.card{
+    background-color: var(--n-0);
+    width: 256px;
+    padding: 42px 24px 42px 24px;
+    border-radius: var(--border-radius-regular-card);
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    flex-direction: column;
+    color: var(--n-700);
+    font-family: var(--font-lato);
+   margin: 24px 0;
+    @include tablet{
+        width: 288px;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 24px;
+        @include tablet{
+          
+        }
+    }
+
+    .title{
+        font-size: 20px;
+        font-weight: 900;
+        margin: 0 10px 0 10px;
+    }
+
+    .desc{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        color: var(--n-700)
+    }
+
+    .plan{
+        color: var(--n-600);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 900;
+    }
+
+    .discount{
+        color: var(--n-600);
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: line-through;
+
+    }
+    .price{
+        color: var(--n-700);
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 900;
+        border-bottom: 1px solid var(--n-400);
+        padding-bottom: 12px;
+    }
+
+    .list{
+        margin: 10px 0 30px 0;
+        height: 328px;
+        @include tablet{
+            margin: 10px 0 20px 0;
+        }
+    }
+
+    .item-list{
+        display: flex;
+        margin: 16px 0;
+    }
+
+    .content-point{
+        width: 25px;
+        padding-top: 11px;
+    }
+
+    .punto {
+        width: 6px;
+        height: 6px;
+        background-color: var(--n-700);
+        border-radius: 50%;
+      }
+
+
+     
+}
+.content-icon{
+    width: 50px;
+    padding-top: 6px;
+  }

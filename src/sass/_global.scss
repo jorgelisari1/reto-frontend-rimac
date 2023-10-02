@@ -22,60 +22,6 @@ body {
 #root {
   width: 100%;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-br-sonoma);
-  font-weight: normal;
-}
-
-h1 {
-  color: #1f2345;
-  font-size: 48px;
-  line-height: 64px;
-  margin: 0;
-  z-index: 1;
-}
-
-h2 {
-  color: #1f2345;
-  font-size: 40px;
-  line-height: 56px;
-  margin: 0;
-  text-align: center;
-}
-
-h3 {
-  color: #1f2345;
-  font-size: 32px;
-  line-height: 40px;
-  margin: 0;
-  text-align: center;
-}
-
-h4 {
-  color: #1f2345;
-  font-size: 28px;
-  line-height: 40px;
-  margin: 0;
-  text-align: center;
-}
-
-h5 {
-  color: #1f2345;
-  font-size: 24px;
-  line-height: 32px;
-  margin: 0;
-  text-align: center;
-}
-
-
-
-
 .text {
   &-left {
     text-align: left;
@@ -110,27 +56,6 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 32px;
-    line-height: 40px;
-    z-index: 1;
-  }
-
-  h2 {
-    font-size: 28px;
-    line-height: 40px;
-  }
-
-  h3 {
-    font-size: 28px;
-    line-height: 40px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-}
 
 
 .container {
@@ -142,6 +67,7 @@ input[type='number']::-webkit-inner-spin-button {
     padding-left: 120px;
     padding-right: 120px;
     width: 100%;
+  
 
     @include desktop {
       padding-left: 48px;

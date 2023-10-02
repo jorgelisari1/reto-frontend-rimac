@@ -1,0 +1,143 @@
+@import '../../sass/media';
+
+.form {
+  /deep/ .MuiFormLabel-root,
+  /deep/ .MuiInputLabel-root {
+    font-family: var(--font-br-sonoma);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 2px;
+  }
+
+  /deep/ .MuiFilledInput-root {
+    background-color: #fff;
+    border: 1px solid var(--field-border-color);
+    border-radius: var(--border-radius-form);
+    height: 56px;
+    overflow: hidden;
+  }
+
+  /deep/ .MuiFilledInput-root:hover {
+    border-color: var(--grey-60);
+  }
+
+  /deep/ .MuiFilledInput-root .MuiFilledInput-input {
+    border-color: var(--grey-60);
+    border-width: 1px;
+    color: var(--grey-100);
+    font-family: var(--font-br-sonoma);
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /deep/ .MuiInputLabel-root.Mui-error {
+    color: var(--critical);
+  }
+
+  /deep/ .MuiFormHelperText-root {
+    color: var(--critical);
+    font-family: var(--font-br-sonoma);
+  }
+
+  /deep/ .MuiFilledInput-root.MuiFilledInput-root,
+  /deep/ .MuiSvgIcon-root {
+    fill: var(--grey-100);
+  }
+
+  /deep/ .MuiFilledInput-underline::before,
+  /deep/ .MuiFilledInput-underline::after {
+    content: none;
+  }
+
+  /deep/ .MuiFilledInput-root.Mui-error,
+  /deep/ .MuiFilledInput-root.Mui-error:hover,
+  /deep/ .MuiFilledInput-root.Mui-focused.Mui-error {
+    border-color: var(--critical);
+  }
+
+  /deep/ .MuiFormLabel-root.MuiInputLabel-root .MuiFormLabel-asterisk,
+  /deep/ .MuiFormLabel-root.MuiInputLabel-root.Mui-error.Mui-focused {
+    color: var(--critical);
+  }
+
+  /deep/ .MuiFormLabel-root.MuiInputLabel-root.Mui-focused {
+    color: var(--grey-100);
+  }
+
+  /deep/ .MuiOutlinedInput-input {
+    border-color: var(--grey-60);
+    color: var(--grey-80);
+  }
+
+  /deep/ .MuiInputLabel-outlined {
+    border-color: var(--grey-60);
+    color: var(--grey-80);
+  }
+
+  /deep/ .MuiInputBase-root.Mui-focused,
+  /deep/ .MuiOutlinedInput-input:hover,
+  /deep/ .MuiInputBase-root.Mui-focused .MuiOutlinedInput-input,
+  /deep/ .MuiInputLabel-outlined:hover,
+  /deep/ .MuiInputLabel-outlined.Mui-focused {
+    border-color: var(--grey-60);
+    color: var(--grey-100);
+  }
+
+  /deep/ .MuiFormControl-root {
+    border-radius: var(--border-radius-form);
+  }
+  /deep/ .MuiFilledInput-input-fieldset {
+    border-color: var(--grey-60);
+    border-radius: 12px;
+  }
+
+  /deep/ .MuiFilledInput-root.Mui-disabled,
+  /deep/ .MuiFormLabel-root.Mui-disabled,
+  /deep/ .MuiFilledInput-root.Mui-disabled:hover {
+    background: var(--grey-30);
+    border-color: var(--grey-50);
+    color: var(--grey-50);
+  }
+  /deep/ .MuiFormLabel-root.Mui-disabled {
+    background: transparent;
+  }
+
+  /deep/ .MuiIconButton-root {
+    display: none;
+  }
+
+  &.date-picker {
+    /deep/ .MuiFilledInput-input {
+      cursor: pointer;
+    }
+  }
+}
+
+.bien-select {
+  /deep/ .MuiFilledInput-root.MuiFilledInput-root .MuiFilledInput-input {
+    padding: 18.5px 12px;
+  }
+
+  /deep/ .MuiInputLabel-root + .MuiFilledInput-root.MuiFilledInput-root .MuiFilledInput-input {
+    padding: 27px 12px 10px;
+  }
+
+  /deep/ .MuiSelect-icon {
+    fill: var(--grey-80);
+  }
+  /deep/ .MuiSelect-icon.Mui-disabled {
+    fill: var(--grey-60);
+  }
+
+  
+}
+
+.subTitle{
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grey-100);
+  padding-bottom: 24px;
+  letter-spacing: 0.2px;
+  line-height: 20px;
+}

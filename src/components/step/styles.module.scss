@@ -1,0 +1,103 @@
+@import '../../sass/media';
+
+.step{
+    background: var(--n-200);
+    min-height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-lato);
+    margin: 0 -120px;
+    @include desktop {
+        margin: 0 -48px;
+      }
+  
+      @include mobile {
+        margin: 0 -24px;
+      }
+    .numberDark{
+       background: var(--b-600);
+       color: var(--n-0);
+       font-size: 12px;
+       border-radius: 50%;
+       height: 24px;
+       width: 24px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin-right: 10px;
+    }
+
+    .selected{
+       font-size: 16px;
+       font-weight: 600;
+       color: var(--n-700);
+  
+    }
+
+    .dashed{
+        color: var(--b-600);
+        width: 32px;
+        letter-spacing: 2px;
+        margin: 0 10px;
+    }
+
+   
+
+    .unselected{
+        color: var(--n-600);
+        font-size: 16px;
+    }
+    
+}
+
+.stepMobile{
+        background: var(--n-100);
+        border-bottom: 1px solid var(--n-400);
+        min-height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-lato);
+
+        .text{
+            font-size: 10px;
+            color: var(--n-700);
+            margin-right: 10px;
+            font-weight: 700;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .progress{
+            width: 70%;
+            height: 6px;
+            background: var(--n-400);
+            border-radius: var(--border-radius-button);
+            display: flex;
+            justify-content: flex-start;
+            .lead{
+                background-color: var(--b-600);
+                height: 6px;
+                width: 10%;
+                border-radius: var(--border-radius-button);
+            }
+        }
+
+}
+
+
+.numberLight{
+    color: var(--n-600);
+    font-size: 12px;
+    border: 1px solid var(--n-600);
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+}

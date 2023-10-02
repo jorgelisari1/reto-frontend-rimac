@@ -1,0 +1,22 @@
+/* RoundButton.css */
+
+.round-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--n-500);
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+  }
+  
+  .round-button.checked {
+    background-color: var(--success);
+    border-color: var(--success);
+    color: var(--n-0);
+  }
+  

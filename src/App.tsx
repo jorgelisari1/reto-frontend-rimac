@@ -1,34 +1,36 @@
-import React from 'react';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Header from './components/header';
-import ErrorPage from './pages/Error';
-import Login from './pages/Login';
-import Home from './pages/Home';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './sass/_global.scss';
 
+import Header from './components/header';
+import ErrorPage from './pages/Error';
+import Login from './pages/login';
+import Home from './pages/home';
+import Resume from './pages/resume';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element:  < Login/>,
+    path: '/',
+    element: <Login />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "home",
+    path: 'home',
     element: <Home />,
+  },
+  {
+    path: 'resume',
+    element: <Resume />,
   },
 ]);
 
 function App() {
   return (
-    <div className='container grid'>
-      <Header/>
-      <RouterProvider router={router} />
-
-    </div>
+    <>
+      <div className='container grid'>
+        <Header />
+        <RouterProvider router={router} />
+      </div>
+    </>
   );
 }
 
