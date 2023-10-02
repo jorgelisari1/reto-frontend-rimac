@@ -1,5 +1,5 @@
 import React from 'react';
-import RoundButton from '../buttonRound';
+import RoundButton from '../button-round';
 import styles from './styles.module.scss';
 
 type Props = {

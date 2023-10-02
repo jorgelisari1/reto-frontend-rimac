@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Step from '../../components/step';
 import ButtonBack from '../../components/buttonBack';
-import SimpleCardHome from '../../components/simpleCardHome';
+import SimpleCardHome from '../../components/simple-card-home';
 import CardHome from '../../components/card-home';
 import useResponsive from '../../hooks/use-responsive';
 import IconForMe from '../../assets/images/IcProtectionLight.svg';

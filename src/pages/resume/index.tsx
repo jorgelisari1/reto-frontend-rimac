@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import Step from '../../components/step';
 import ButtonBack from '../../components/buttonBack';
+import CardResume from '../../components/card-resume';
 import useResponsive from '../../hooks/use-responsive';
 import styles from './styles.module.scss';
 
 
 
-const nameC = "Plan en Casa";
-const price = 39;
 
-const description = [
-    "Médico general a domicilio por S/20 y medicinas cubiertas al 100%.",
-    "Videoconsulta y orientación telefónica  al 100% en medicina general + pediatría.",
-    "Indemnización de S/300 en caso de hospitalización por más de un día."
-]
+   const name= 'jorgelis arianna pacheco rengifo'
+   const dni= '003719316'
+   const phone= '935121874'
+   const plan= 'Plan en Casa y Clínica'
+   const price= 99 
+
 
 const Resume: React.FC = () => {
     const [check, setCheck] = useState(true);
     const { isTablet } = useResponsive();
-    const name = 'Rocío'
-    return <section className={styles.home} >
+    return <section className={styles.resume} >
         <Step />
         {
             !isTablet && (<div className={styles.center}>
@@ -28,8 +27,11 @@ const Resume: React.FC = () => {
         }
         <div className={styles.contentTitle}>
             <h2 className={styles.title}>Resumen del seguro</h2>
-           
         </div>
+<div className={styles.content}>
+<CardResume name={name} dni={dni} phone={phone} plan={plan} price={price} />
+</div>
+    
 
     </section>
 

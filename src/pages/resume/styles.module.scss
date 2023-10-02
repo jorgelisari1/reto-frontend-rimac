@@ -1,6 +1,6 @@
 @import '../../sass/media';
 
-.home{
+.resume{
 grid-column: 1/13;
 height: 100vh;
 font-family: var(--font-lato);
@@ -46,6 +46,11 @@ padding-bottom: 50px;
             font-weight: 400;
             line-height: 28px;
         }
+    }
+
+    .content{
+        display: flex;
+        justify-content: center;
     }
     
 }

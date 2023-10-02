@@ -1,4 +1,3 @@
-// src/components/Home.tsx
 import React, { useState } from 'react';
 import Button from '../../components/button';
 import CardLoginTag from '../../components/card-login-tag/CardLoginTag';

@@ -7,7 +7,9 @@
     justify-content: center;
     align-items: center;
     font-family: var(--font-lato);
-
+    left: 0;
+    right: 0;
+    position: fixed;
     .numberDark{
        background: var(--b-600);
        color: var(--n-0);

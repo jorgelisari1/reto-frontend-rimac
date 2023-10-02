@@ -73,12 +73,7 @@ const LoginTextField: React.FC<Props> = ({
                         IconComponent={ExpandMoreIcon}
                         onChange={handleChange}
                         sx={{
-                            color: '#03050F',
-                            border: '1px solid #5E6488',
-                            '&:selected': {
-                                borderColor: 'red',
-                                backgroundColor: 'white',
-                              },
+                        
                         }}
                         
                     >
@@ -104,6 +99,7 @@ const LoginTextField: React.FC<Props> = ({
                     sx={{
                         paddingBottom: 2,
                         minWidth: isMobile?320:352,
+                        
                     }}
                     id="celular"
                     type="text"
