@@ -66,11 +66,7 @@
 
 .imgContainer {
     position: relative;
-    width: 100%;
-    max-width: 100%; 
-    @include desktop-large{
-        max-width: 50%; 
-    }
+  
   }
 .bigImage{
     width: 100%;
