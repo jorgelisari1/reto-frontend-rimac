@@ -12,7 +12,8 @@ type Props = {
     price: number,
     icon: string,
     description: Array<string>,
-    userData: any
+    userData: any,
+    discount?: number | undefined
 }
 
 type PropsIcon = {
@@ -33,7 +34,7 @@ const IconList: React.FC<PropsIcon> = ({ elem }) => {
             return null;
     }
 };
-const CardHome: React.FC<Props> = ({ title, price, icon, description , userData}) => {
+const CardHome: React.FC<Props> = ({ title, price, icon, description , userData, discount}) => {
 
     const { isTablet } = useResponsive();
      const navigate = useNavigate();
@@ -55,6 +56,9 @@ const CardHome: React.FC<Props> = ({ title, price, icon, description , userData}
             <span><img src={icon} alt="icono de salud" /></span>
         </div>
         <span className="plan">COSTO DEL PLAN</span>
+        {
+            discount && ( <span className="discount">${discount} antes</span>)
+        }
         <span className="price">${price} al mes</span>
 
         <div className='list'>

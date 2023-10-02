@@ -44,6 +44,14 @@
         line-height: 16px;
         font-weight: 900;
     }
+
+    .discount{
+        color: var(--n-600);
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: line-through;
+
+    }
     .price{
         color: var(--n-700);
         font-size: 20px;

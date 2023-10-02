@@ -14,7 +14,7 @@ const Resume: React.FC = () => {
 
 
     return <section className={styles.resume} >
-        <Step />
+        <Step  step={2}/>
         {
             !isTablet && (<div className={styles.center}>
                 <ButtonBack text={'Volver'}  route='/home' data={receivedData.userData}/>

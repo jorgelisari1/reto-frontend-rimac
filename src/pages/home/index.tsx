@@ -20,7 +20,6 @@ const Home: React.FC = () => {
     const { isTablet } = useResponsive();
     const location = useLocation();
     const receivedData = location.state?.data || null;
-    console.log('goback', receivedData)
     const userAge = calculateAgeFromString(receivedData.birthDay);
     useEffect(() => {
         // Verifica si los datos del usuario están disponibles
@@ -38,7 +37,7 @@ const Home: React.FC = () => {
     }, [receivedData]);
 
     return <section className={styles.home} >
-        <Step />
+        <Step textMobile='PASO 1 DE 2' step={1} />
         {
             !isTablet && (<div className={styles.center}>
                 <ButtonBack text={'Volver'}  route='/'/>
@@ -81,6 +80,7 @@ const Home: React.FC = () => {
                                 description={item.description}
                                 icon={IconForMe}
                                 userData={receivedData}
+                                discount={checkTwo ? item.price: undefined}
                             />
                         )
                     }

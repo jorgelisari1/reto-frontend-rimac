@@ -29,7 +29,8 @@ const Login: React.FC = () => {
   const navigate = useNavigate()
 
   const onClickScheduleButton = async() => {
-    const validate = doc !== '' && !errorDoc && phone !== '' && !error
+    
+    const validate = doc !== '' && !errorDoc && phone !== '' && !error && checked && checkedTwo;
        if(validate){
         try {
           const response = await fetchApiPerson();
@@ -47,8 +48,9 @@ const Login: React.FC = () => {
         }
 
      }else{
-      setLabelPhone('por favor ingresa datos válidos')
-      setError(true);
+      setError(!error);
+      setLabelPhone('por favor ingresa todos los datos ')
+     
      }
    
   };

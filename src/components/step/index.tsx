@@ -5,17 +5,18 @@ import StepMobile from './stepMobile';
 import styles from './styles.module.scss'
 
 type Props = {
-    text?: string
+    textMobile? : string | undefined,
+    step: number
 }
-const Steps: React.FC<Props> = ({ text }) => {
+const Steps: React.FC<Props> = ({ textMobile, step }) => {
 
     const { isTablet } = useResponsive();
 
-    return <div>
+    return <>
         {
-            isTablet ? <StepMobile  text={'PASO 1 DE 2'}/> : <Step />
+            isTablet ? (textMobile && <StepMobile text={textMobile} />) : <Step step={step} />
         }
-    </div>
+    </>
 
 };
 
