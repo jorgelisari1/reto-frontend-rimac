@@ -1,75 +1,88 @@
-# Getting Started with Create React App
+# React App: Reto front end 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación web construida con React y  TypeScript, para manejar los estilos usa  SASS y la librería '@mui-material'. A continuación, se detallan las principales características y razones para el uso de estas tecnologías y herramientas.
 
-## Available Scripts
+## Descripción del Proyecto
 
-In the project directory, you can run:
+La aplicación es una interfaz de usuario moderna y receptiva construida con React y TypeScript. Utiliza estilos personalizados escritos en SASS para una apariencia única y atractiva. La interfaz de usuario se desarrolla con la biblioteca de componentes Material-UI, que proporciona componentes preestablecidos y un conjunto de herramientas para el diseño y desarrollo eficientes. 
 
-### `npm start`
+## Principales Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### React
+#### Descripción: React es una biblioteca de JavaScript para construir interfaces de usuario. Es mantenida por Facebook y se utiliza para construir componentes reutilizables y gestionar el estado de la aplicación de manera eficiente.
+Razones para el Uso: React proporciona un enfoque declarativo para el desarrollo de interfaces de usuario, facilitando la creación y el mantenimiento de componentes. La creación de aplicaciones con React también facilita la adopción de TypeScript y el desarrollo más estructurado.
+TypeScript
+#### Descripción: TypeScript es un superconjunto de JavaScript que agrega tipado estático a la sintaxis de JavaScript. Permite la detección temprana de errores y proporciona herramientas de desarrollo más sólidas.
+#### Razones para el Uso: TypeScript mejora la mantenibilidad y escalabilidad del código al agregar tipado estático. Proporciona autocompletado en el desarrollo, facilitando la comprensión del código y reduciendo errores.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### SASS
+#### Descripción: SASS (Syntactically Awesome Stylesheets) es un preprocesador de CSS que extiende la sintaxis de CSS. Permite el uso de variables, anidamiento y funciones, lo que facilita el mantenimiento y la escritura de estilos más complejos.
+#### Razones para el Uso: SASS mejora la eficiencia en el desarrollo de estilos al proporcionar características como variables y anidamiento, lo que hace que el código sea más modular y fácil de mantener.
 
-### `npm test`
+### Material-UI
+#### Descripción: Material-UI es una biblioteca de componentes React que implementa el diseño de Material Design de Google. Proporciona una amplia variedad de componentes personalizables y preestablecidos.
+#### Razones para el Uso: Material-UI acelera el desarrollo proporcionando componentes estilizados y funcionales listos para usar. La biblioteca sigue las pautas de diseño de Material Design, lo que garantiza una apariencia moderna y coherente en la interfaz de usuario.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Configuración del Proyecto
+
+## Instalación de Dependencias:
+npm install
+
+## Ejecución del Proyecto en Modo de Desarrollo:
+npm start
+## Generación de la Versión de Producción:
 
 ### `npm run build`
+Crea la versión optimizada para producción en la carpeta build.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estructura del Proyecto
+La estructura del proyecto sigue una organización típica de una aplicación React, con carpetas para componentes, estilos y otros recursos.
+/src
+  /assets
+  /components
+  /hooks
+  /icons
+  /sass
+  /pages
+  /services
+  /typins
+  /utils
+  App.tsx
+  index.tsx
+  
+- /assets: Guarda código relacionado a typografías e imágenes .   
+- /components: Contiene componentes React reutilizables.
+- /hooks: Contiene funciones que permiten manejar el estado de react.
+- /icons: Almacena componentes con los iconos necesarios 
+- /sass: Almacena archivos SASS para estilos globales y modulares.
+- /pages: Contiene componentes específicos de páginas.
+- typins: modelos de datos 
+- /utils: Utilidades y funciones auxiliares.
+- /services: Contiene archivos con codigo relacionado al consumo de APIS.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ## Notas importantes:
+- Con respecto al manejo de los estilos es necesario acotar que dentro del proyecto existen dos maneras de cargar los estilos, ambas son correctas y como no está especificado en las consideraciones, son con fines de mostrarlo en la prueba técnica :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  1. Importando los estilos desde un módulo:
+     #### Principales ventajas
+     Namespacing: Los estilos de un módulo se encuentran dentro de un espacio de nombres específico (el objeto styles en este caso), lo que puede ayudar a prevenir colisiones de 
+     nombres de clases.
+     
+  2. Importar los archivos directamente desde un archivo
+   #### Principales ventajas
+     Importar estilos directamente es simple y directo.
 
-### `npm run eject`
+  El uso de estilos de módulo (importar desde un módulo) es generalmente recomendado para proyectos más grandes o equipos colaborativos, ya que ayuda a evitar colisiones de nombres y hace que el código sea más mantenible. Proporciona una buena encapsulación y modularidad.
+   
+La elección realmente depende del contexto y de los estándares y acuerdos del equipo de desarrollo.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Para compartir los datos fuese sido mejor hacerlo a través de un estado global , pero por razones de tiempo preferí pasar los datos con la ayuda del react-router-dom.
+- Tambien he visto que puedo seguir modularizando más mis componentes, esto con el fin de contribuir al clean code, hacer mantenibles los componentes y por su puesto que facilite la comprensión del código para otros devs.
+- El entorno de pruebas unitarias esta listo para empezar a realizarlas.
+  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-1. Importar estilos desde un módulo:
-jsx
-Copy code
-import styles from "styles.module.scss";
-Ventajas:
-
-Namespacing: Los estilos de un módulo se encuentran dentro de un espacio de nombres específico (el objeto styles en este caso), lo que puede ayudar a prevenir colisiones de nombres de clases.
-Intellisense/autocomplete: Al importar estilos de un módulo, algunos editores de código pueden proporcionar funciones de autocompletado para las clases disponibles.
-Consideraciones:
-
-Nombres de Clases Dinámicos: Algunas veces, si necesitas generar dinámicamente nombres de clases en tiempo de ejecución, puede ser un poco más complejo con estilos de módulo.
-2. Importar estilos directamente desde un archivo:
-jsx
-Copy code
-import './component.scss';
-Ventajas:
-
-Simplicidad: Importar estilos directamente es simple y directo.
-Consideraciones:
-
-Colisiones de Nombres: Si estás trabajando en un proyecto grande o colaborativo, puede haber riesgos de colisión de nombres de clases, ya que todas las clases se agregan al mismo espacio de nombres global.
-Menos Estricto: No hay namespacing, lo que significa que todas las clases están disponibles globalmente.
-Recomendación Personal:
-El uso de estilos de módulo (importar desde un módulo) es generalmente recomendado para proyectos más grandes o equipos colaborativos, ya que ayuda a evitar colisiones de nombres y hace que el código sea más mantenible. Proporciona una buena encapsulación y modularidad.
-
-En proyectos más pequeños o individuales, donde la simplicidad puede ser más valiosa, importar estilos directamente puede ser suficiente.
-
-La elección realmente depende del contexto y de tus preferencias personales, así que elige el enfoque que se ajuste mejor a tu situación.
