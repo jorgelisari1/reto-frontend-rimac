@@ -13,19 +13,6 @@ import IconForMe from '../../assets/images/IcProtectionLight.svg';
 import IconForOther from '../../assets/images/IcAddUserLight.svg';
 import styles from './styles.module.scss';
 
-
-
-const nameC = "Plan en Casa";
-const price = 39;
-
-const description = [
-    "Médico general a domicilio por S/20 y medicinas cubiertas al 100%.",
-    "Videoconsulta y orientación telefónica  al 100% en medicina general + pediatría.",
-    "Indemnización de S/300 en caso de hospitalización por más de un día."
-]
-
-
-
 const Home: React.FC = () => {
     const [check, setCheck] = useState(false);
     const [checkTwo, setCheckTwo] = useState(false);
@@ -33,6 +20,7 @@ const Home: React.FC = () => {
     const { isTablet } = useResponsive();
     const location = useLocation();
     const receivedData = location.state?.data || null;
+    console.log('goback', receivedData)
     const userAge = calculateAgeFromString(receivedData.birthDay);
     useEffect(() => {
         // Verifica si los datos del usuario están disponibles
@@ -53,7 +41,7 @@ const Home: React.FC = () => {
         <Step />
         {
             !isTablet && (<div className={styles.center}>
-                <ButtonBack text={'Volver'} />
+                <ButtonBack text={'Volver'}  route='/'/>
             </div>)
         }
         <div className={styles.contentTitle}>
@@ -90,8 +78,9 @@ const Home: React.FC = () => {
                                 key={item.name}
                                 title={item.name}
                                 price={check ? item.price : minusFivePercent(item.price)}
-                                description={description}
+                                description={item.description}
                                 icon={IconForMe}
+                                userData={receivedData}
                             />
                         )
                     }

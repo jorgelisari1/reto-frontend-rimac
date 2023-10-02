@@ -4,12 +4,13 @@ import styles from './styles.module.scss';
 
 type Props = {
     name: string,
-    dni: string,
+    docType: string,
+    doc: string,
     phone: string,
     plan: string,
     price: number 
 }
-const CardResume: React.FC<Props> = ({ name, dni, phone, plan, price  }) => {
+const CardResume: React.FC<Props> = ({ name, docType, doc, phone, plan, price  }) => {
 
     return <div className={styles.card}>
         <span className={styles.first}>PRECIOS CALCULADOS PARA:</span>
@@ -19,7 +20,7 @@ const CardResume: React.FC<Props> = ({ name, dni, phone, plan, price  }) => {
         </div>
         <div className={styles.contentData}>
             <span className={styles.title}>Responsable de pago</span>
-            <span className={styles.subtitle}>DNI: {dni}</span>
+            <span className={styles.subtitle}>{docType}: {doc}</span>
             <span className={styles.subtitle}>Celular: {phone}</span>
 
         </div>

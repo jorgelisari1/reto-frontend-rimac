@@ -13,6 +13,10 @@ padding-bottom: 50px;
 .contentCarHome{
     display: flex;
     justify-content: space-around;
+    @include tablet {
+        flex-direction: column;
+        align-items: center;
+    }
 
 }
 

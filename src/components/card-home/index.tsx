@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../button';
 import GlHospitalSolid from '../../icons/gl-hospital-solid';
 import GlLaptopSolid from '../../icons/gl-laptop-solid';
@@ -10,7 +11,8 @@ type Props = {
     title: string,
     price: number,
     icon: string,
-    description: Array<string>
+    description: Array<string>,
+    userData: any
 }
 
 type PropsIcon = {
@@ -31,9 +33,21 @@ const IconList: React.FC<PropsIcon> = ({ elem }) => {
             return null;
     }
 };
-const CardHome: React.FC<Props> = ({ title, price, icon, description }) => {
+const CardHome: React.FC<Props> = ({ title, price, icon, description , userData}) => {
 
     const { isTablet } = useResponsive();
+     const navigate = useNavigate();
+  
+
+    const handleClick=()=>{
+
+        const dataResume = {
+            userData, 
+            price,
+            title
+         }
+         navigate('/resume', { state: { resume: dataResume } });
+    }
 
     return <div className="card">
         <div className="content">
@@ -59,7 +73,7 @@ const CardHome: React.FC<Props> = ({ title, price, icon, description }) => {
             }
         </div>
 
-        <Button text="Seleccionar Plan" theme='red' expand />
+        <Button text="Seleccionar Plan" theme='red' expand onClick={handleClick} />
     </div>
 
 };

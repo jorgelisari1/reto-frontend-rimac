@@ -46,6 +46,9 @@
     --button-color: var(--r-500);
     --text-color: var(--n-0);
     background-color: var(--r-500);
+    font-family: var(--font-lato);
+    font-size: 18px;
+    font-weight: 700;
 
     &:not(.--disabled-hover):not([disabled]):hover {
       --button-color: transparent;
