@@ -6,7 +6,7 @@ import { minusFivePercent } from '../../utils/minus-five-percent';
 import {calculateAgeFromString} from '../../utils/calculate-age'
 import Step from '../../components/step';
 import ButtonBack from '../../components/buttonBack';
-import SimpleCardHome from '../../components/simple-card-home';
+import SimpleCardHome from '../../components/card-home-simple';
 import CardHome from '../../components/card-home';
 import useResponsive from '../../hooks/use-responsive';
 import IconForMe from '../../assets/images/IcProtectionLight.svg';
@@ -14,17 +14,37 @@ import IconForOther from '../../assets/images/IcAddUserLight.svg';
 import styles from './styles.module.scss';
 
 const Home: React.FC = () => {
-    const [check, setCheck] = useState(false);
-    const [checkTwo, setCheckTwo] = useState(false);
-    const [apiData, setApiData] = useState<ApiPlansResponse | null>(null);
-    const { isTablet } = useResponsive();
-    const location = useLocation();
-    const receivedData = location.state?.data || null;
-    const userAge = calculateAgeFromString(receivedData.birthDay);
+    const [checks, setChecks] = useState({
+        check: false,
+        checkTwo: false,
+      });
+      const [apiData, setApiData] = useState<ApiPlansResponse | null>(null);  
+      const { isTablet } = useResponsive();
+      const location = useLocation();
+      const receivedData = location.state?.data || null;
+      const userAge = calculateAgeFromString(receivedData.birthDay);
+
+      const { check, checkTwo } = checks;
+      const handleCheckChange = () => {
+        setChecks((prevChecks) => ({
+          ...prevChecks,
+          check: !prevChecks.check,
+          checkTwo: false,
+        }));
+      };
+      
+      const handleCheckTwoChange = () => {
+        setChecks((prevChecks) => ({
+          ...prevChecks,
+          checkTwo: !prevChecks.checkTwo,
+          check: false,
+        }));
+      };
+ 
+   
     useEffect(() => {
         // Verifica si los datos del usuario están disponibles
         if (receivedData) {
-
             fetchApiPlans()
                 .then(response => {
                     // Actualiza el estado con la respuesta de la API
@@ -53,43 +73,42 @@ const Home: React.FC = () => {
                 desc='Cotiza tu seguro de salud y agrega familiares si así lo deseas.'
                 icon={IconForMe}
                 checked={check}
-                setChecked={setCheck}
+                handleCheckedChange ={handleCheckChange}
                 checkedOther={checkTwo}
-                setCheckedOther={setCheckTwo}
+                handleCheckedOtherChange={handleCheckTwoChange}
             />
             <SimpleCardHome
                 title='Para alguien más'
                 desc='Realiza una cotización para uno de tus familiares o cualquier persona.'
                 icon={IconForOther}
                 checked={checkTwo}
-                setChecked={setCheckTwo}
+                handleCheckedChange={handleCheckTwoChange}
                 checkedOther={check}
-                setCheckedOther={setCheck}
+                handleCheckedOtherChange={handleCheckChange}
 
             />
         </section>
-        {
-            (check || checkTwo) && (<section className={styles.contentCarHome}>{
-                apiData!.list.map((item) => {
-                    if(userAge >= item.age){
-                        return (
-                            <CardHome
-                                key={item.name}
-                                title={item.name}
-                                price={check ? item.price : minusFivePercent(item.price)}
-                                description={item.description}
-                                icon={IconForMe}
-                                userData={receivedData}
-                                discount={checkTwo ? item.price: undefined}
-                            />
-                        )
-                    }
-                    
-                })
-            }
-            </section>)
-        }
 
+        {apiData &&  (check || checkTwo) && (
+  <section className={styles.contentCarHome}>
+    {
+              apiData.list
+              .filter(item => userAge >= item.age)
+              .map(item => (
+                <CardHome
+                  key={item.name}
+                  title={item.name}
+                  price={checkTwo? item.price : minusFivePercent(item.price)}
+                  description={item.description}
+                  icon={IconForMe}
+                  userData={receivedData}
+                  discount={checkTwo ? item.price : undefined}
+                />
+              ))
+    }
+  </section>
+)}
+       
     </section>
 
 };

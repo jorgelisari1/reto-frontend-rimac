@@ -8,20 +8,33 @@ type Props = {
     desc: string,
     icon: string,
     checked: boolean,
-    setChecked(boolean): void,
+    handleCheckedChange(boolean): void,
     checkedOther: boolean,
-    setCheckedOther(boolean): void 
+    handleCheckedOtherChange(boolean): void 
     
 }
-const SimpleCardHome: React.FC<Props> = ({ title, desc, icon, checked, setChecked, checkedOther ,setCheckedOther}) => {
+const SimpleCardHome: React.FC<Props> = ({
+     title,
+     desc,
+     icon,
+     checked,
+     handleCheckedChange,
+     checkedOther,
+     handleCheckedOtherChange}) => {
 
     return <div 
     className={classNames(styles.card, {
         [styles["--select"]]: checked,
       })}>
-        <span className={styles.check}><RoundButton isChecked={checked} setIsChecked={setChecked}  isCheckedOther={checkedOther} setIsCheckedOther={setCheckedOther}/></span>
+        <span className={styles.check}>
+            <RoundButton 
+            isChecked={checked} 
+            setIsChecked={handleCheckedChange}  
+            isCheckedOther={checkedOther} 
+            setIsCheckedOther={handleCheckedOtherChange}/>
+        </span>
         <div className={styles.content}>
-        <span><img src={icon} alt="icono de salud"/></span>
+        <span><img src={icon} alt={`Icono de ${title}`} /></span>
         <span className={styles.title}>{title}</span>
         </div>
        
