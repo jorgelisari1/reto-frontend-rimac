@@ -2,6 +2,19 @@
 
 .all{
     grid-column: 1/13;
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    padding-bottom: 48px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(86.01deg, #00f4e2 0%, #00ff7f 100%);
+        z-index: -1;
+      }
     @include tablet {
         grid-column: 1/5;
       
@@ -51,8 +64,17 @@
     }
 }
 
+.imgContainer {
+    position: relative;
+    width: 100%;
+    max-width: 100%; 
+    @include desktop-large{
+        max-width: 50%; 
+    }
+  }
 .bigImage{
-    height: 560px;
-    width: 480px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 

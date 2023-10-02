@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { fetchApiPerson } from '../../services/api';
 import Button from '../../components/button';
 import CardLoginTag from '../../components/card-login-tag/CardLoginTag';
 import LoginTextField from '../../components/text-field';
@@ -17,7 +19,6 @@ const Login: React.FC = () => {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(false);
   const [errorDoc, setDocError] = useState(false);
-  const [errorCliente, setErrorCliente] = useState(false);
   const [labelDoc, setLabelDoc] = useState('');
   const [labelPhone, setLabelPhone] = useState('');
   const [id, setId] = useState('DNI');
@@ -25,55 +26,77 @@ const Login: React.FC = () => {
   const [checkedTwo, setCheckedTwo] = useState(true);
 
   const { isTablet } = useResponsive();
-  const onClickScheduleButton = () => {
-    console.log('acaa')
+  const navigate = useNavigate()
+
+  const onClickScheduleButton = async() => {
+    const validate = doc !== '' && !errorDoc && phone !== '' && !error
+       if(validate){
+        try {
+          const response = await fetchApiPerson();
+          const dataToSend = {  doc,
+            docType:id,
+            phone,
+            name: response.name,
+            lastName: response.lastName,
+            birthDay: response.birthDay
+           };
+   
+          navigate('/home', { state: { data: dataToSend } });
+        } catch (error) {
+          console.error('Error al llamar a la API:', error);
+        }
+
+     }else{
+      setLabelPhone('por favor ingresa datos válidos')
+      setError(true);
+     }
+   
   };
 
-  return (<article className={styles.all}>
-    <section className={styles.container}>
-    {!isTablet &&<LazyImage src={bigImageFamily} alt="famila feliz" className={styles.bigImage} />}
-    <section className={styles.content}>
-      <div className={styles.conditionalImage}>
-        <CardLoginTag />
-        {isTablet && <img src={smallImageFamily} alt='una familia feliz' className={styles.smallImage} />}
-      </div>
+  return (
+    <article className={styles.all}>
+      <section className={styles.container}>
+        {!isTablet && <div className={styles.imgContainer}><LazyImage src={bigImageFamily} alt="famila feliz" className={styles.bigImage} /></div>}
+        <section className={styles.content}>
+          <div className={styles.conditionalImage}>
+            <CardLoginTag />
+            {isTablet && <img src={smallImageFamily} alt='una familia feliz' className={styles.smallImage} />}
+          </div>
 
-      <LoginTextField
-        doc={doc}
-        setDoc={setDoc}
-        phone={phone}
-        setPhone={setPhone}
-        error={error}
-        setError={setError}
-        errorDoc={errorDoc}
-        setErrorDoc={setDocError}
-        errorCliente={errorCliente}
-        setErrorCliente={setErrorCliente}
-        labelDoc={labelDoc}
-        setLabelDoc={setLabelDoc}
-        labelPhone={labelPhone}
-        setLabelPhone={setLabelPhone}
-        id={id}
-        setId={setId}
-      />
+          <LoginTextField
+            doc={doc}
+            setDoc={setDoc}
+            phone={phone}
+            setPhone={setPhone}
+            errorPhone={error}
+            setErrorPhone={setError}
+            errorDoc={errorDoc}
+            setErrorDoc={setDocError}
+            labelDoc={labelDoc}
+            setLabelDoc={setLabelDoc}
+            labelPhone={labelPhone}
+            setLabelPhone={setLabelPhone}
+            id={id}
+            setId={setId}
+          />
 
-      <Check text={"Acepto lo Política de Privacidad"} state={checked} setState={setChecked} />
-      <Check text={"Acepto la Política Comunicaciones Comerciales"} state={checkedTwo} setState={setCheckedTwo} />
-      <Link text="Aplican Términos y Condiciones." />
-      <div className={styles.btn}>
-        <Button
-          outline
-          expand
-          text="Cotíza aquí"
-          onClick={onClickScheduleButton}
-        />
-      </div>
-    </section>
+          <Check text={"Acepto lo Política de Privacidad"} state={checked} setState={setChecked} />
+          <Check text={"Acepto la Política Comunicaciones Comerciales"} state={checkedTwo} setState={setCheckedTwo} />
+          <Link text="Aplican Términos y Condiciones." />
+          <div className={styles.btn}>
+            <Button
+              outline
+              expand
+              text="Cotíza aquí"
+              onClick={onClickScheduleButton}
+            />
+          </div>
+        </section>
 
-  </section>
-  <Footer/>
-  </article>
-  
+      </section>
+      <Footer />
+    </article>
+
   );
 };
 

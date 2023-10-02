@@ -23,9 +23,8 @@
 
     &:disabled {
       cursor: initial;
-
       --border-color: transparent;
-      --text-color: var(--grey-40);
+      --text-color: var(--n-0);
       --button-color: var(--blue-opacity);
     }
   }

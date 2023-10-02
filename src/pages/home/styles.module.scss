@@ -10,7 +10,7 @@ padding-bottom: 50px;
     grid-column: 1/5;
 }
     .center{
-        padding: 48px 64px;
+        padding: 0 64px;
     }
 
     .contentTitle{
@@ -23,7 +23,7 @@ padding-bottom: 50px;
         h2{
             font-family: var(--font-lato);
             font-weight: 700;
-            line-height: 36px;
+            line-height: 48px;
             font-size: 28px;
         }
         @include tablet{

@@ -3,18 +3,19 @@ import CheckIcon from '@mui/icons-material/Check';
 import './RoundButton.scss';
 
 interface RoundButtonProps {
-  // Puedes agregar más propiedades según tus necesidades
-  onClick?: () => void;
+  isChecked: boolean;
+  setIsChecked(booolean): void;
+  isCheckedOther: boolean
+  setIsCheckedOther(boolean): void;
 }
 
-const RoundButton: React.FC<RoundButtonProps> = ({ onClick }) => {
-  const [isChecked, setIsChecked] = useState(false);
+const RoundButton: React.FC<RoundButtonProps> = ({ isChecked, setIsChecked, isCheckedOther,setIsCheckedOther }) => {
 
   const handleClick = () => {
-    setIsChecked(!isChecked);
-    if (onClick) {
-      onClick();
+    if(isCheckedOther){
+      setIsCheckedOther(!isCheckedOther)
     }
+    setIsChecked(!isChecked)
   };
 
   return (

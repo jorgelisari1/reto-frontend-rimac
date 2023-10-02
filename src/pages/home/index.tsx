@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import Step from '../../components/step';
 import ButtonBack from '../../components/buttonBack';
 import SimpleCardHome from '../../components/simple-card-home';
@@ -19,19 +20,29 @@ const description = [
     "Indemnización de S/300 en caso de hospitalización por más de un día."
 ]
 
+
+
 const Home: React.FC = () => {
-    const [check, setCheck] = useState(true);
+    const [check, setCheck] = useState(false);
+    const [checkTwo, setCheckTwo] = useState(false);
     const { isTablet } = useResponsive();
-    const name = 'Rocío'
+    const location = useLocation();
+    const receivedData = location.state?.data || null;
+
+    console.log('useLocation', receivedData)
+
     return <section className={styles.home} >
+        <div className={styles.hola}>
         <Step />
+        </div>
+       
         {
             !isTablet && (<div className={styles.center}>
                 <ButtonBack text={'Volver'} />
             </div>)
         }
         <div className={styles.contentTitle}>
-            <h2 className={styles.title}>{name} ¿Para quién deseas cotizar?</h2>
+            <h2 className={styles.title}>{receivedData.name} ¿Para quién deseas cotizar?</h2>
             <span className={styles.subtitle}>Selecciona la opción que se ajuste más a tus necesidades.</span>
         </div>
         <section className={styles.section}>
@@ -41,23 +52,32 @@ const Home: React.FC = () => {
                 icon={IconForMe}
                 checked={check}
                 setChecked={setCheck}
+                checkedOther={checkTwo}
+                setCheckedOther={setCheckTwo}
             />
             <SimpleCardHome
                 title='Para alguien más'
                 desc='Realiza una cotización para uno de tus familiares o cualquier persona.'
                 icon={IconForOther}
-                checked={check}
-                setChecked={setCheck}
+                checked={checkTwo}
+                setChecked={setCheckTwo}
+                checkedOther={check}
+                setCheckedOther={setCheck}
+
             />
         </section>
-        <section>
+        {
+            (check || checkTwo)&&(<section>
             <CardHome
                 title={nameC}
                 price={price}
                 description={description}
                 icon={IconForMe}
             />
-        </section>
+        </section>)
+
+        }
+       
 
 
     </section>
