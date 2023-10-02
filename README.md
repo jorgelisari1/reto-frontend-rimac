@@ -79,6 +79,27 @@ La elección realmente depende del contexto y de los estándares y acuerdos del 
 - Para compartir los datos fuese sido mejor hacerlo a través de un estado global , pero por razones de tiempo preferí pasar los datos con la ayuda del react-router-dom.
 - Tambien he visto que puedo seguir modularizando más mis componentes, esto con el fin de contribuir al clean code, hacer mantenibles los componentes y por su puesto que facilite la comprensión del código para otros devs.
 - El entorno de pruebas unitarias esta listo para empezar a realizarlas.
+- También dejé un par de comentarios en el Figma, debido a que no existían indicaciones, en ciertos casos de UI. (Cómo por ejemplo en los cards grandes de la segunda vista , donde se resaltan en negrita ciertas palabras).
+
+
+  ## Reflexiones Finales
+  He tratado de abordar todos los objetivos de manera integral, pero reconozco que debido a restricciones de tiempo, es posible que haya áreas donde el código podría mejorarse aún más. Sé que la excelencia siempre es el objetivo, y estoy comprometida a seguir mejorando mis habilidades.
+  
+  Algunos puntos específicos donde creo que podría haber margen para mejoras son:
+
+  [Login.tsx]: Aunque logré realizar la funcionalidad, creo que hay oportunidades para optimizar el rendimiento o la legibilidad del código en esa sección.
+
+[Manejo de la información]: Dada la limitación de tiempo, he implementado la forma de pasar información entre rutas, pero estoy consciente de que hay enfoques más eficientes o elegantes que podrían implementarse.
+
+[Manejo de la información]: Durante la implementación del proyecto, reconozco que podría haber utilizado ciertos patrones o técnicas más avanzados que, por falta de tiempo, no pude abordar de manera completa.
+
+En conclusión, esta prueba técnica ha sido un desafío emocionante y enriquecedor. A través de cada línea de código escrita y cada problema resuelto, he reafirmado mi pasión por la creación de experiencias web excepcionales.
+
+Me siento segura en mis habilidades como Front-End Developer y estoy convencida de que, más allá de las limitaciones temporales, he demostrado mi capacidad para abordar problemas y ofrecer una solución. La búsqueda constante de la excelencia es mi motor principal, y cada proyecto es una oportunidad para superar mis propios estándares.
+
+
+
+<>¡Muchas gracias, hasta pronto!</>
   
 
 
