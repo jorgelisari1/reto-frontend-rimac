@@ -1,4 +1,4 @@
-# React App: Reto front end 
+# React App: Reto front end ()
 
 Este proyecto es una aplicación web construida con React y  TypeScript, para manejar los estilos usa  SASS y la librería '@mui-material'. A continuación, se detallan las principales características y razones para el uso de estas tecnologías y herramientas.
 
