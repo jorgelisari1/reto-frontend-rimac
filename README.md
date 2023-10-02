@@ -65,12 +65,12 @@ La estructura del proyecto sigue una organización típica de una aplicación Re
 
   1. Importando los estilos desde un módulo:
      #### Principales ventajas
-     Namespacing: Los estilos de un módulo se encuentran dentro de un espacio de nombres específico (el objeto styles en este caso), lo que puede ayudar a prevenir colisiones de 
-     nombres de clases.
+       Namespacing: Los estilos de un módulo se encuentran dentro de un espacio de nombres específico (el objeto styles en este caso), lo que puede ayudar a prevenir colisiones de 
+       nombres de clases.
      
   2. Importar los archivos directamente desde un archivo
-   #### Principales ventajas
-     Importar estilos directamente es simple y directo.
+     #### Principales ventajas
+       Importar estilos directamente es simple y directo.
 
   El uso de estilos de módulo (importar desde un módulo) es generalmente recomendado para proyectos más grandes o equipos colaborativos, ya que ayuda a evitar colisiones de nombres y hace que el código sea más mantenible. Proporciona una buena encapsulación y modularidad.
    
