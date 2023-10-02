@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 
 type ButtonHover = "on" | "off";
 type ButtonTheme = "default" | "red" ;
-type ButtonSize = "2xl" | "xl" | "lg" | "md" | "sm";
+type ButtonSize =  "md" | "sm";
 type Props = {
   text: string;
   outline?: boolean;
@@ -38,11 +38,8 @@ const Button: FC<Props> = ({
       [styles["--expand"]]: expand,
       [styles["--loading"]]: loading,
       [styles["--outline"]]: outline,
-      [styles["--large"]]: size === "lg",
       [styles["--small"]]: size === "sm",
       [styles["--medium"]]: size === "md",
-      [styles["--x1-large"]]: size === "xl",
-      [styles["--x2-large"]]: size === "2xl",
       [styles["--red"]]: theme === "red",
       [styles["--disabled-hover"]]: hover === "off" || loading,
     })}

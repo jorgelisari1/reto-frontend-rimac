@@ -1,0 +1,25 @@
+.btn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .light{
+        color: var(--b-600);
+        font-size: 12px;
+        border: 2px solid var(--b-600);
+        border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+    
+    }
+
+    .text{
+        color: var(--b-600);
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+}

@@ -42,39 +42,34 @@
     --text-color: var(--grey-100);
   }
 
+  &.--red {  
+    --border-color: var(--r-500);
+    --button-color: var(--r-500);
+    --text-color: var(--n-0);
+    background-color: var(--r-500);
 
+    &:not(.--disabled-hover):not([disabled]):hover {
+      --button-color: transparent;
+      --text-color: var(--n-0);
+    }
+  }
 
 
 
   &.--red.--outline {
     --button-color: transparent;
-    --text-color: var(--grey-0);
-    --border-color: var(--green-300);
+    --text-color: var(--n-0);
+    --border-color: var(--r-500);
 
     &:not(.--disabled-hover):not([disabled]):hover {
-      --button-color: var(--green-300);
-      --text-color: var(--grey-100);
+      --button-color: var(--n-300);
+      --text-color: var(--n-0);
     }
   }
 }
 
 %button-sizes {
   $border: calc(var(--border-width-form) * 2);
-
-  &.--x2-large {
-    min-height: 64px;
-    padding: substract(20px, $border) substract(40px, $border);
-  }
-
-  &.--x1-large {
-    min-height: 68px;
-    padding: substract(18px, $border) substract(40px, $border);
-  }
-
-  &.--large {
-    min-height: 62px;
-    padding: substract(14px, $border) substract(32px, $border);
-  }
 
   &.--medium {
     min-height: 56px;
