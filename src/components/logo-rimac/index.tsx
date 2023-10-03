@@ -1,13 +1,14 @@
-import { FC } from 'react'
-
+import React, {FC} from 'react'
 import LazyImage from '../lazy-img'
 import LogoRimac from '../../assets/images/Logo.svg'
 
+
 type Props = {
   className?: string
-  dimension?: number
+  widthImage?: number
+  heightImage?: number
 }
 
-export const RimacLogo: FC<Props> = ({ dimension, className }) => (
-  <LazyImage src={LogoRimac} alt="Logo Estar Bien" style={{ width: dimension }} className={className} />
+export const RimacLogo: FC<Props> = ({ widthImage,heightImage, className }) => (
+  <LazyImage src={LogoRimac} alt="Logo Estar Bien" style={{ width: widthImage, height: heightImage }} className={className} />
 )

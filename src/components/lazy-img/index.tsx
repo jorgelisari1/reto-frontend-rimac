@@ -1,4 +1,4 @@
-import { FC, CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import { LazyLoadImage} from 'react-lazy-load-image-component'
 
 type Props = {

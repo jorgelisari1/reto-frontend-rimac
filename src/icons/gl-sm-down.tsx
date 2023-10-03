@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import React, { SVGProps } from "react";
 
 type Props = {
   size?: "sm" | "md";

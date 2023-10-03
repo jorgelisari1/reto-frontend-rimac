@@ -7,9 +7,19 @@
         text-align: left;
         font-size: 32px;
         font-family: var(--font-br-sonoma-bold);
+        margin: 0;
+        line-height: 40px;
+        @include tablet{
+            line-height: 36px;
+            font-size: 28px;
+        }
+        
+       
     }
+
     @include tablet{
         width: 204px;
         font-size: 28px;
+       
     }
 }

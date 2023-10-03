@@ -6,7 +6,7 @@ type Props = {
 }
 const Link: React.FC<Props> = ({ text }) => {
 
-    return <a className={styles.text}>{text}</a>
+    return <a className={styles.text} href='https://www.rimac.com.pe/uploads/Condicionado-General_FOLA.pdf'>{text}</a>
 
 };
 

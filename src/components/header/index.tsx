@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import useResponsive from '../../hooks/use-responsive'
 import { RimacLogo } from '../logo-rimac'
 import { GlTelephoneSolid } from '../../icons/gl-telephone-solid'
@@ -12,7 +12,7 @@ const Header: FC = () => {
         <div id="header"
             className={styles.header}>
                 <div>
-                    <RimacLogo dimension={50} />
+                    <RimacLogo widthImage={73}  heightImage={36}/>
                 </div>
                 <div  className={styles.content}>
                     {
@@ -22,10 +22,7 @@ const Header: FC = () => {
                     <GlTelephoneSolid/>
                     <div className={styles.number}>(01) 411 6001</div>
                     </div>
-                    
-                    
                 </div>
-           
         </div>
     )
 }
