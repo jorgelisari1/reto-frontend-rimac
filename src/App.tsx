@@ -1,3 +1,4 @@
+import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './sass/_global.scss';
 
@@ -6,6 +7,7 @@ import ErrorPage from './pages/Error';
 import Login from './pages/login';
 import Home from './pages/home';
 import Resume from './pages/resume';
+
 
 const router = createBrowserRouter([
   {

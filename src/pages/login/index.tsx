@@ -1,16 +1,16 @@
   import React, { useState } from 'react';
   import { useNavigate } from 'react-router-dom';
   import { fetchApiPerson } from '../../services/api';
-  import Button from '../../components/button';
-  import CardLoginTag from '../../components/card-login-tag/CardLoginTag';
-  import LoginTextField from '../../components/text-field';
-  import Check from '../../components/check';
-  import Link from '../../components/link';
-  import LazyImage from '../../components/lazy-img';
-  import Footer from '../../components/footer';
   import useResponsive from '../../hooks/use-responsive'
   import styles from './styles.module.scss';
-
+  const Button = React.lazy(() => import('../../components/button'));
+  const CardLoginTag = React.lazy(() => import('../../components/card-login-tag/CardLoginTag'));
+  const LoginTextField = React.lazy(() => import('../../components/text-field'));
+  const Check = React.lazy(() => import('../../components/check'));
+  const Link = React.lazy(() => import('../../components/link'));
+  const LazyImage = React.lazy(() => import('../../components/lazy-img'));
+  const Footer = React.lazy(() => import('../../components/footer'));
+ 
   import bigImageFamily from '../../assets/images/big-family-pic.png'
   import smallImageFamily from '../../assets/images/small-family-pic.png'
 
@@ -62,7 +62,7 @@
           <section className={styles.content}>
             <div className={styles.conditionalImage}>
               <CardLoginTag />
-              {isTablet && <img src={smallImageFamily} alt='una familia feliz' className={styles.smallImage} />}
+              {isTablet && <img src={smallImageFamily} alt='una familia feliz' className={styles.smallImage} width={136} height={160} />}
             </div>
 
             <LoginTextField
@@ -84,7 +84,7 @@
 
             <Check text={"Acepto lo Política de Privacidad"} state={checked} setState={setChecked} />
             <Check text={"Acepto la Política Comunicaciones Comerciales"} state={checkedTwo} setState={setCheckedTwo} />
-            <Link text="Aplican Términos y Condiciones." />
+            <Link text="Aplican Términos y Condiciones."/>
             <div className={styles.btn}>
               <Button
                 outline
